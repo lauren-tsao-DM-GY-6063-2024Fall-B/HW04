@@ -13,7 +13,7 @@ function emitter(x, y) {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(235);
-  strokeWeight(2);
+  strokeWeight(1);
   angleMode(DEGREES);
 
   print(width, height);
@@ -23,77 +23,68 @@ function setup() {
 
   //top left emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(blue)
     emitter(0, 0);
-    
   }
 
   //top middle emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(red)
     emitter(width / 2, 0);
-    stroke(205, 40, 40)
   }
 
   //top right emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    push()
-    print(cnt);
+    stroke(blue)
     emitter(width, height);
-    stroke(38, 91, 170)
-    pop()
   }
 
   //middle left emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    push()
-    print(cnt);
+    stroke(red)
     emitter(0, height / 2);
-    stroke(205, 40, 40)
-    pop()
   }
 
   //true middle emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(yellow)
     emitter(width / 2, height / 2);
-    stroke(244, 231, 41)
   }
 
   //middle right emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(red)
     emitter(0, height / 2);
-    stroke(205, 40, 40)
   }
 
   //bottom left emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(blue)
     emitter(0, height);
-    stroke(38, 91, 170)
+    stroke(blue)
   }
 
   //bottom middle emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(red)
     emitter(width / 2, height);
-    stroke(205, 40, 40)
   }
 
   //bottom right emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(blue)
     emitter(width, 0);
-    stroke(38, 91, 170)
   }
 
   //middle right emitter
   for (let cnt = 0; cnt < 19; cnt++) {
-    print(cnt);
+    stroke(red)
     emitter(width, height / 2);
-    stroke(205, 40, 40)
   }
 }
 
 function draw() {}
+
+function mouseClicked() {
+  setup();
+}
