@@ -9,84 +9,89 @@ function emitter(x, y, rx, ry) {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(250);
-  strokeWeight(1);
+  background(235);
+  strokeWeight(0.5);
   angleMode(DEGREES);
 
   print(width, height);
   let blue = color(38, 91, 170);
   let red = color(205, 40, 40);
-  let yellow = color(244, 231, 41);
+  let yellow = color(230, 204, 14);
+
+  let minWidth = width / 8;
+  let minHeight = height / 8;
+  let maxWidth = width / 1.5;
+  let maxHeight = height / 1.5;
 
   //top left emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(blue);
-    let rx = random(500, 1000);
-    let ry = random(0, 1000);
+    let rx = random(minWidth, maxWidth);
+    let ry = random(0, maxHeight);
     emitter(0, 0, rx, ry);
   }
 
   //top middle emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(red);
-    let rx = random(-500, 1000);
-    let ry = random(-500, 500);
+    let rx = random(-maxWidth, maxWidth);
+    let ry = random(minHeight, maxHeight);
     emitter(width / 2, 0, rx, ry);
   }
 
   //top right emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(blue);
-    let rx = random(-500, -1000);
-    let ry = random(0, 500);
+    let rx = random(-minWidth, -maxWidth);
+    let ry = random(0, maxHeight);
     emitter(width, 0, rx, ry);
   }
 
   //middle left emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(red);
-    let rx = random(0, 1000);
-    let ry = random(-1000, 1000);
+    let rx = random(0, maxWidth);
+    let ry = random(-maxHeight, maxHeight);
     emitter(0, height / 2, rx, ry);
   }
 
   //true middle emitter
   for (let cnt = 0; cnt < 19; cnt++) {
     stroke(yellow);
-    let rx = random(-1000, 1000);
-    let ry = random(-1000, 1000);
+    let rx = random(-maxWidth, maxWidth);
+    let ry = random(-maxHeight, maxHeight);
     emitter(width / 2, height / 2, rx, ry);
   }
 
   //middle right emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(red);
-    let rx = random(-500, -1000);
-    let ry = random(-500, 1000);
+    let rx = random(-minWidth, -maxWidth);
+    let ry = random(maxHeight, -maxHeight);
     emitter(width, height / 2, rx, ry);
   }
 
   //bottom left emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(blue);
-    let rx = random(500, 1000);
-    let ry = random(0, -1000);
+    let rx = random(minWidth, maxWidth);
+    let ry = random(0, -maxHeight);
     emitter(0, height, rx, ry);
   }
 
   //bottom middle emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(red);
-    let rx = random(-1000, 500);
-    let ry = random(0, -1000);
+    let rx = random(-maxWidth, maxWidth);
+    let ry = random(0, -maxHeight);
     emitter(width / 2, height, rx, ry);
   }
 
   //bottom right emitter
   for (let cnt = 0; cnt < 10; cnt++) {
     stroke(blue);
-    let rx = random(-500, -1000);
-    let ry = random(-500, -1000);
+    let rx = random(-minWidth, -maxWidth);
+    let ry = random(-minHeight, -maxHeight);
     emitter(width, height, rx, ry);
   }
 
@@ -114,4 +119,3 @@ function draw() {}
 function mouseClicked() {
   setup();
 }
-
