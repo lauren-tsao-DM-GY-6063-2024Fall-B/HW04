@@ -21,14 +21,13 @@ function setup() {
   background(Dpurple);
   noStroke();
 
-  let rPosition = random(20, 30);
+  let rWidth = random(25, 75);
 
-  for (let y = 0; y < height; y += rPosition) {
-    for (let x = 0; x < width; x += rPosition) {
+  for (let y = 0; y < height; y += rWidth) {
+    for (let x = 0; x < width; x += rWidth) {
       let rStart = random([0, 90]);
       let rStop = random([90, 180, 270, 360]);
       let rf = random([green, pink, yellow]);
-      let rWidth = random(rPosition, rPosition - 20);
 
       push();
       translate(x, y);
